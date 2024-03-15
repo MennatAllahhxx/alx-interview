@@ -38,8 +38,8 @@ def boxUnlocked(boxes, keys_inside, checklist):
     """
     for key_inside in keys_inside:
         if ((checklist[key_inside] == 1) or (key_inside >= len(boxes))):
-            pass
-        else:
-            checklist[key_inside] = 1
-            boxUnlocked(boxes, boxes[key_inside], checklist)
+            return checklist
+        
+        checklist[key_inside] = 1
+        boxUnlocked(boxes, boxes[key_inside], checklist)
     return checklist
