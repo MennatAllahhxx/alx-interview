@@ -14,6 +14,9 @@ def canUnlockAll(boxes):
         bool: True if all boxes can be opened, else return False
     """
     num_of_boxes = len(boxes)
+    if num_of_boxes == 0:
+        return True
+
     checklist = [0 for box in range(num_of_boxes)]
     checklist[0] = 1
 
