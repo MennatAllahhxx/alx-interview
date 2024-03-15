@@ -37,7 +37,7 @@ def boxUnlocked(boxes, keys_inside, checklist):
         Checklist: returns checklist after update
     """
     for key_inside in keys_inside:
-        if ((checklist[key_inside] == 0) or (key_inside >= len(boxes))):
+        if ((checklist[key_inside] == 1) or (key_inside >= len(boxes))):
             return checklist
 
         checklist[key_inside] = 1
