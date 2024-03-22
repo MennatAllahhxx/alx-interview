@@ -13,7 +13,7 @@ def minOperations(n):
     Returns:
         int: least number of operations.
     """
-    if n < 1:
+    if n <= 1:
         return 0
     ops = 1
     copy_value = 1
@@ -35,7 +35,3 @@ def minOperations(n):
             ops = ops + 1
 
     return ops
-
-n = 12
-print('when n = {}'.format(n))
-print('number of operations = {}'.format(minOperations(n)))
