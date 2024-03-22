@@ -13,7 +13,7 @@ def minOperations(n):
     Returns:
         int: least number of operations.
     """
-    if n <= 1:
+    if not isinstance(n, int) or n <= 1:
         return 0
     ops = 1
     copy_value = 1
