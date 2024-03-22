@@ -13,10 +13,10 @@ def minOperations(n):
     Returns:
         int: least number of operations.
     """
-    ops: int = 1
+    ops = 1
     copy_value = 1
-    items: int = 0
-    left: int = n - items
+    items = 0
+    left = n - items
     while left > 0:
         items = items + copy_value
         left = n - items
