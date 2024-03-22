@@ -4,7 +4,7 @@ Module contains minOperations fun
 """
 
 
-def minOperations(n: int) -> int:
+def minOperations(n):
     """AI is creating summary for minOperations
 
     Args:
