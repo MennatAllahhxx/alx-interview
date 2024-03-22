@@ -13,25 +13,29 @@ def minOperations(n):
     Returns:
         int: least number of operations.
     """
-    if not isinstance(n, int) or n <= 1:
+    if n <= 1:
         return 0
-    ops = 1
-    copy_value = 1
-    items = 0
-    left = n - items
-    while left > 0:
-        items = items + copy_value
-        left = n - items
-        if left == items:
-            ops = ops + 2
-            break
-        if ((left % (3 * copy_value)) == 0) and (copy_value != 1):
-            copy_value = items * 2
-            ops = ops + 2
-        elif left == 2 * items:
-            ops = ops + 3
-            break
-        else:
-            ops = ops + 1
 
-    return ops
+    # Set the minimum operation variable to 0
+    min_operations = 0
+    # Set the current length variable to 1 as we start with 1 character 'H'
+    current_length = 1
+    # Set the clipboard variable to 0 as we are not copying anything yet
+    clipboard = 0
+
+    # Loop until current length is equal to n
+    while current_length < n:
+        # If n is divisible by current length, we can copy all
+        if n % current_length == 0:
+            # This is the only time we can copy
+            clipboard = current_length
+            # Minimum operation is incremented by 1 because we copied
+            min_operations += 1
+
+        # Paste the clipboard
+        current_length += clipboard
+        # Minimum operation is incremented by 1 because we pasted
+        min_operations += 1
+
+    # Return minimum operation
+    return min_operations
