@@ -15,10 +15,10 @@ def validUTF8(data: List[int]) -> bool:
     Returns:
         bool: True if data is a valid UTF-8 encoding, else return False.
     """
-    bytes_num = len(data)
-    if bytes_num == 0:
+    if data == []:
         return True
 
+    bytes_num = len(data)
     i = 0
 
     while i < bytes_num:
@@ -27,7 +27,7 @@ def validUTF8(data: List[int]) -> bool:
             ones_num = get_ones(data[i])
             if ones_num == 0:
                 return False
-            
+
             for j in range(ones_num):
                 if (j + i + 2) > bytes_num or\
                    (((data[i + j + 1] >> 7) & 1) == 0) or\
