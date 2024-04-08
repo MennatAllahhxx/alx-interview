@@ -26,7 +26,7 @@ def validUTF8(data: List[int]) -> bool:
         if (data[i] >> 7) & 1:
             ones_num = get_ones(data[i])
             for j in range(ones_num):
-                if (j+ i + 2) > bytes_num or\
+                if (j + i + 2) > bytes_num or\
                    (((data[i + j + 1] >> 7) & 1) == 0) or\
                    (((data[i + j + 1] >> 6) & 1) == 1):
                     return False
@@ -45,7 +45,7 @@ def get_ones(number: int) -> int:
     """
     num = 0
 
-    while number & (1<< 7):
+    while number & (1 << 7):
         num += 1
         number = number << 1
 
