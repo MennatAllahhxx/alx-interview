@@ -23,7 +23,7 @@ def validUTF8(data: List[int]) -> bool:
 
     while i < bytes_num:
         ones_num = 0
-        if (data[i] >> 7) & 1:
+        if ((data[i] >> 7) & 1) == 1:
             ones_num = get_ones(data[i])
             if ones_num == 0:
                 return False
