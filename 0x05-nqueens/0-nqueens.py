@@ -1,26 +1,30 @@
 #!/usr/bin/python3
+"""
+N Queens problem solution
+"""
 
 import sys
 
+
 def is_safe(board, row, col, N):
-    # Check if there is a queen in the same column
+    """is_safe fun"""
     for i in range(row):
         if board[i][col] == 1:
             return False
 
-    # Check upper left diagonal
     for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
         if board[i][j] == 1:
             return False
 
-    # Check upper right diagonal
     for i, j in zip(range(row, -1, -1), range(col, N)):
         if board[i][j] == 1:
             return False
 
     return True
 
-def solve_n_queens_util(board, row, N, solutions):
+
+def n_queens_usage(board, row, N, solutions):
+    """n_queens_usage fun"""
     if row == N:
         solution = []
         for i in range(N):
@@ -33,10 +37,12 @@ def solve_n_queens_util(board, row, N, solutions):
     for col in range(N):
         if is_safe(board, row, col, N):
             board[row][col] = 1
-            solve_n_queens_util(board, row + 1, N, solutions)
+            n_queens_usage(board, row + 1, N, solutions)
             board[row][col] = 0
 
-def solve_n_queens(N):
+
+def n_queens(N):
+    """n_queens fun"""
     if not N.isdigit():
         print("N must be a number")
         sys.exit(1)
@@ -48,10 +54,11 @@ def solve_n_queens(N):
 
     board = [[0] * N for _ in range(N)]
     solutions = []
-    solve_n_queens_util(board, 0, N, solutions)
+    n_queens_usage(board, 0, N, solutions)
 
     for solution in solutions:
         print(solution)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -59,4 +66,4 @@ if __name__ == "__main__":
         sys.exit(1)
 
     N = sys.argv[1]
-    solve_n_queens(N)
+    n_queens(N)
