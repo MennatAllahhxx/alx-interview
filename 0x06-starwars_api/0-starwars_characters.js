@@ -7,11 +7,11 @@ request(url, async (error, response, body) => {
     console.error(error);
     return;
   }
-  
+
   if (response.statusCode === 200) {
     const movie = JSON.parse(body);
     const characters = movie.characters;
-    
+
     for (const character of characters) {
       try {
         const characterBody = await getCharacter(character);
@@ -23,7 +23,7 @@ request(url, async (error, response, body) => {
   }
 });
 
-async function getCharacter(character) {
+async function getCharacter (character) {
   return new Promise((resolve, reject) => {
     request(character, (error, response, body) => {
       if (error) {
