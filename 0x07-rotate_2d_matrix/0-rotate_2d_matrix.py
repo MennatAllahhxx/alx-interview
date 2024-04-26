@@ -10,10 +10,10 @@ def rotate_2d_matrix(matrix: List[List[int]]) -> List[List[int]]:
     """AI is creating summary for rotate_2d_matrix
 
     Args:
-        matrix (List[List[int]]): [description]
+        matrix (List[List[int]]): matrix to be reversed
 
     Returns:
-        List[List[int]]: [description]
+        List[List[int]]: reversed matrix
     """
     n = len(matrix)
 
