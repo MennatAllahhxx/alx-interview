@@ -3,17 +3,12 @@
 Rotate 2D Matrix
 """
 
-from typing import List
 
-
-def rotate_2d_matrix(matrix: List[List[int]]) -> None:
+def rotate_2d_matrix(matrix) -> None:
     """AI is creating summary for rotate_2d_matrix
 
     Args:
-        matrix (List[List[int]]): matrix to be reversed
-
-    Returns:
-        List[List[int]]: reversed matrix
+        matrix: matrix to be reversed
     """
     n = len(matrix)
 
