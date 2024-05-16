@@ -2,10 +2,9 @@
 """
 island perimeter calculator
 """
-from typing import List
 
 
-def island_perimeter(grid: List[List[int]]) -> int:
+def island_perimeter(grid) -> int:
     """AI is creating summary for island_perimeter
 
     Args:
