@@ -3,6 +3,7 @@
 prime game module
 """
 
+
 def isWinner(x, nums):
     """AI is creating summary for isWinner
 
